@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Professional Bio Build | Greater Ambitions LLC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --burgundy: #52211A;
+    --burgundy-deep: #3E1813;
+    --gold: #A87605;
+    --gold-bright: #C99320;
+    --gold-soft: #D9B97A;
+    --charcoal: #1C1A18;
+    --charcoal-deep: #141210;
+    --cream: #F7F2E9;
+    --warm-white: #FDFBF7;
+    --ink: #2A2522;
+    --ink-soft: #5C534D;
+    --line: #E5DCCC;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ink);
+    background: var(--warm-white);
+    line-height: 1.65;
+    font-size: 17px;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 32px; }
+
+  /* ============ COVER ============ */
+  .cover {
+    background:
+      linear-gradient(rgba(28,26,24,0.92), rgba(20,18,16,0.96)),
+      repeating-linear-gradient(0deg, transparent, transparent 47px, rgba(168,118,5,0.18) 47px, rgba(168,118,5,0.18) 48px),
+      repeating-linear-gradient(90deg, transparent, transparent 47px, rgba(168,118,5,0.18) 47px, rgba(168,118,5,0.18) 48px);
+    background-color: var(--charcoal);
+    color: var(--cream);
+    padding: 72px 32px 88px;
+    position: relative;
+  }
+  .cover-inner { max-width: 860px; margin: 0 auto; }
+  .logo-zone {
+    width: 180px; height: 64px;
+    border: 1.5px dashed var(--gold);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    margin-bottom: 64px;
+    transition: border-color .25s, background .25s;
+    position: relative;
+  }
+  .logo-zone:hover { border-color: var(--gold-bright); background: rgba(168,118,5,0.07); }
+  .logo-zone::before, .logo-zone::after {
+    content: ''; position: absolute; width: 14px; height: 14px;
+  }
+  .logo-zone::before { top: -5px; left: -5px; border-top: 2.5px solid var(--gold); border-left: 2.5px solid var(--gold); }
+  .logo-zone::after { bottom: -5px; right: -5px; border-bottom: 2.5px solid var(--gold); border-right: 2.5px solid var(--gold); }
+  .logo-word { font-family: 'Playfair Display', serif; font-size: 21px; color: var(--burgundy); text-transform: lowercase; letter-spacing: 0.5px; line-height: 1; }
+  .cover .logo-word { color: #C9756A; }
+  .logo-sub { font-family: 'DM Sans', sans-serif; font-size: 7px; letter-spacing: 3.2px; color: var(--gold); margin-top: 6px; font-weight: 500; }
+  .eyebrow {
+    font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 4px;
+    text-transform: uppercase; color: var(--gold-bright); margin-bottom: 24px;
+  }
+  .cover h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 6.5vw, 64px);
+    font-weight: 700; line-height: 1.08; letter-spacing: -0.5px;
+    max-width: 14ch;
+  }
+  .cover h1 em { font-style: italic; color: var(--gold-soft); }
+  .cover .deck {
+    margin-top: 28px; font-size: 19px; font-weight: 300;
+    color: rgba(247,242,233,0.85); max-width: 52ch; line-height: 1.6;
+  }
+  .cover-meta {
+    margin-top: 56px; display: flex; gap: 40px; flex-wrap: wrap;
+    font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 1.5px;
+    color: rgba(247,242,233,0.6); text-transform: uppercase;
+  }
+  .cover-meta span b { color: var(--gold-bright); font-weight: 500; display: block; margin-bottom: 4px; }
+
+  /* ============ BURGUNDY INTRO STRIP ============ */
+  .intro-strip {
+    background: var(--burgundy); color: var(--cream);
+    padding: 64px 32px;
+  }
+  .intro-strip .wrap { max-width: 760px; }
+  .intro-strip p.lede {
+    font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 500;
+    line-height: 1.45; font-style: italic;
+  }
+  .intro-strip p.body {
+    margin-top: 24px; font-size: 17px; font-weight: 300;
+    color: rgba(247,242,233,0.88);
+  }
+  .intro-strip .rule { width: 64px; height: 3px; background: var(--gold-bright); margin-bottom: 32px; }
+
+  /* ============ SECTIONS ============ */
+  section.content { padding: 72px 0; }
+  section.content:nth-of-type(even) { background: var(--cream); }
+  section.content:nth-of-type(odd) { background: var(--warm-white); }
+  .sec-label {
+    font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 3.5px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .sec-label::after { content: ''; flex: 1; height: 1px; background: var(--line); max-width: 120px; }
+  h2 {
+    font-family: 'Playfair Display', serif; font-size: clamp(28px, 4.5vw, 38px);
+    font-weight: 700; line-height: 1.2; color: var(--ink); margin-bottom: 24px;
+    max-width: 22ch;
+  }
+  h3 {
+    font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 600;
+    margin: 36px 0 14px; color: var(--burgundy);
+  }
+  p + p { margin-top: 18px; }
+  .content p { max-width: 68ch; }
+  strong { font-weight: 600; color: var(--ink); }
+
+  /* ============ STAT CARDS ============ */
+  .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 40px 0 8px; }
+  .stat-card {
+    background: var(--charcoal); color: var(--cream); padding: 28px 24px;
+    border-top: 3px solid var(--gold);
+  }
+  .stat-card .num { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 700; color: var(--gold-bright); line-height: 1; }
+  .stat-card .lbl { margin-top: 10px; font-size: 13.5px; line-height: 1.5; color: rgba(247,242,233,0.8); }
+
+  /* ============ PROMPT BLOCKS ============ */
+  .prompt-block {
+    background: var(--charcoal-deep); color: #E8E2D6;
+    border-left: 4px solid var(--gold);
+    padding: 26px 28px; margin: 26px 0;
+    font-family: 'DM Mono', monospace; font-size: 14.5px; line-height: 1.75;
+    position: relative; white-space: pre-wrap;
+  }
+  .prompt-block .pb-tag {
+    position: absolute; top: -11px; left: 20px;
+    background: var(--gold); color: var(--charcoal-deep);
+    font-family: 'DM Sans', sans-serif; font-size: 10.5px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase; padding: 3px 12px;
+  }
+
+  /* ============ ROADMAP / STEPS ============ */
+  .roadmap { margin: 44px 0 8px; position: relative; }
+  .roadmap::before {
+    content: ''; position: absolute; left: 17px; top: 8px; bottom: 8px;
+    width: 2px; background: var(--line);
+  }
+  .road-step { position: relative; padding: 0 0 44px 60px; }
+  .road-step:last-child { padding-bottom: 0; }
+  .road-dot {
+    position: absolute; left: 0; top: 2px;
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--burgundy); color: var(--gold-soft);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif; font-weight: 700; font-size: 16px;
+    border: 2px solid var(--gold);
+  }
+  .road-step h4 { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+  .road-step p { font-size: 16px; color: var(--ink-soft); max-width: 62ch; }
+
+  /* ============ FW CARDS (frameworks/lengths) ============ */
+  .fw-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 36px 0 8px; }
+  .fw-card {
+    background: var(--warm-white); border: 1px solid var(--line);
+    border-top: 3px solid var(--burgundy); padding: 26px 22px;
+  }
+  section.content:nth-of-type(odd) .fw-card { background: var(--cream); }
+  .fw-card .fw-kicker { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); }
+  .fw-card h4 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 10px 0 10px; color: var(--burgundy); }
+  .fw-card p { font-size: 14.5px; line-height: 1.6; color: var(--ink-soft); }
+
+  /* ============ MISTAKES GRID ============ */
+  .mistakes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 36px 0 8px; }
+  .mistake {
+    background: var(--warm-white); border: 1px solid var(--line); padding: 24px 24px 22px;
+    position: relative;
+  }
+  .mistake::before {
+    content: '✕'; position: absolute; top: 22px; right: 22px;
+    color: var(--burgundy); font-weight: 700; font-size: 15px; opacity: .55;
+  }
+  .mistake h4 { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 16px; color: var(--burgundy); margin-bottom: 8px; padding-right: 28px; }
+  .mistake p { font-size: 14.5px; color: var(--ink-soft); line-height: 1.6; }
+
+  /* ============ CHECKLIST ============ */
+  .checklist { margin: 32px 0 8px; border: 1px solid var(--line); background: var(--warm-white); }
+  .check-item { display: flex; gap: 16px; padding: 18px 24px; border-bottom: 1px solid var(--line); align-items: flex-start; }
+  .check-item:last-child { border-bottom: none; }
+  .check-box {
+    width: 20px; height: 20px; border: 2px solid var(--gold); flex-shrink: 0; margin-top: 3px;
+  }
+  .check-item p { font-size: 15.5px; }
+  .check-item p b { color: var(--burgundy); }
+
+  /* ============ CALLOUT ============ */
+  .callout {
+    background: var(--charcoal); color: var(--cream);
+    padding: 36px 36px; margin: 40px 0;
+    border-left: 5px solid var(--gold);
+  }
+  .callout p { font-family: 'Playfair Display', serif; font-size: 20px; font-style: italic; line-height: 1.55; max-width: 60ch; }
+  .callout .attr { margin-top: 14px; font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold-bright); font-style: normal; }
+
+  /* ============ FOOTER CTA ============ */
+  .footer-cta {
+    background:
+      linear-gradient(rgba(62,24,19,0.94), rgba(62,24,19,0.97)),
+      repeating-linear-gradient(45deg, transparent, transparent 30px, rgba(168,118,5,0.15) 30px, rgba(168,118,5,0.15) 31px);
+    background-color: var(--burgundy-deep);
+    color: var(--cream); padding: 80px 32px 64px; text-align: center;
+  }
+  .footer-cta h2 { color: var(--cream); margin: 0 auto 18px; max-width: 20ch; }
+  .footer-cta p { max-width: 56ch; margin: 0 auto; color: rgba(247,242,233,0.85); font-weight: 300; }
+  .cta-tagline {
+    margin: 36px auto 0; font-family: 'Playfair Display', serif;
+    font-size: 24px; font-weight: 600; color: var(--gold-bright); letter-spacing: 1px;
+  }
+  .footer-logo-zone {
+    width: 140px; height: 52px; margin: 48px auto 0;
+    border: 1.5px dashed var(--gold);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    transition: border-color .25s, background .25s; position: relative;
+  }
+  .footer-logo-zone:hover { border-color: var(--gold-bright); background: rgba(168,118,5,0.07); }
+  .footer-logo-zone::before { content: ''; position: absolute; top: -5px; left: -5px; width: 11px; height: 11px; border-top: 2.5px solid var(--gold); border-left: 2.5px solid var(--gold); }
+  .footer-logo-zone::after { content: ''; position: absolute; bottom: -5px; right: -5px; width: 11px; height: 11px; border-bottom: 2.5px solid var(--gold); border-right: 2.5px solid var(--gold); }
+  .footer-logo-zone .logo-word { font-size: 17px; color: #C9756A; }
+  .footer-logo-zone .logo-sub { font-size: 6px; letter-spacing: 2.6px; }
+  .footer-meta { margin-top: 28px; font-family: 'DM Mono', monospace; font-size: 11.5px; letter-spacing: 1.8px; color: rgba(247,242,233,0.55); text-transform: uppercase; line-height: 2.1; }
+
+  @media (max-width: 720px) {
+    .stat-row, .fw-grid { grid-template-columns: 1fr; }
+    .mistakes-grid { grid-template-columns: 1fr; }
+    body { font-size: 16px; }
+    .prompt-block { font-size: 13.5px; padding: 24px 20px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<header class="cover">
+  <div class="cover-inner">
+    <div class="logo-zone">
+      <a href='https://postimg.cc/bSYhPL8Q' target='_blank'><img src='https://i.postimg.cc/bSYhPL8Q/rev-Screenshot-2026-04-27-at-10-23-19-AM.png' border='0' alt='rev-Screenshot-2026-04-27-at-10-23-19-AM'></a>
+    </div>
+    <p class="eyebrow">Free Guide · AI for Executive Positioning</p>
+    <h1>The Professional Bio Build: <em>Write Yours with Claude in One Sitting</em></h1>
+    <p class="deck">A step-by-step system for turning your career record into a bio that wins clients, panels, and boardroom introductions. Five prompts. Three lengths. Zero fluff.</p>
+    <div class="cover-meta">
+      <span><b>Author</b>Dr. Minina Johnson, DBA, PMP</span>
+      <span><b>Published By</b>Greater Ambitions LLC · Tucson, AZ</span>
+      <span><b>Read Time</b>15 Minutes</span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ INTRO STRIP ============ -->
+<div class="intro-strip">
+  <div class="wrap">
+    <div class="rule"></div>
+    <p class="lede">Your bio is not a resume summary. It is a positioning document. Most professionals get this wrong, and it costs them opportunities they never see.</p>
+    <p class="body">Decision makers read your bio before they meet you. Conference organizers read it before they book you. Clients read it before they call you. If your bio recites job titles instead of stating the problem you solve, it does the opposite of its job. This guide shows you how to use Claude.AI to build a bio that positions you correctly, in your own voice, in about an hour.</p>
+  </div>
+</div>
+
+<!-- ============ SECTION 01 ============ -->
+<section class="content">
+  <div class="wrap">
+    <p class="sec-label">Section 01</p>
+    <h2>Why Most Professional Bios Fail</h2>
+    <p>The standard professional bio is a chronological recap. Name, title, years of experience, list of employers, degree, closing line about family or hobbies. It is accurate. It is also forgettable.</p>
+    <p>A bio fails when it answers the wrong question. The reader is not asking "what has this person done?" The reader is asking "what can this person do <strong>for me</strong>?" Those are different questions, and they require different documents.</p>
+    <p>AI changes the economics of fixing this. What used to take a branding consultant and three revision cycles now takes a structured conversation with Claude. But the tool only works if you feed it the right inputs and ask in the right sequence. That sequence is what this guide gives you.</p>
+    <div class="stat-row">
+      <div class="stat-card"><div class="num">7s</div><div class="lbl">Approximate time a reader spends deciding whether your bio is worth finishing.</div></div>
+      <div class="stat-card"><div class="num">3</div><div class="lbl">Versions of your bio you actually need: full, short, and one-liner.</div></div>
+      <div class="stat-card"><div class="num">5</div><div class="lbl">Prompts in this system. Run them in order. Do not skip Step 1.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 02 ============ -->
+<section class="content">
+  <div class="wrap">
+    <p class="sec-label">Section 02</p>
+    <h2>Gather Your Raw Material First</h2>
+    <p>Claude cannot invent your career. The quality of your bio is capped by the quality of what you give it. Before you open a chat, collect these six inputs into one document. Bullet points are fine. Polish is not required.</p>
+    <div class="fw-grid">
+      <div class="fw-card"><span class="fw-kicker">Input 01</span><h4>Outcomes, Not Duties</h4><p>Three to five results with numbers attached. Budget recovered, revenue grown, time saved, teams scaled. Specificity does the persuading.</p></div>
+      <div class="fw-card"><span class="fw-kicker">Input 02</span><h4>Your Audience</h4><p>Who reads this bio and what decision are they making? A client bio, a speaker bio, and a board bio are not the same document.</p></div>
+      <div class="fw-card"><span class="fw-kicker">Input 03</span><h4>Credentials That Matter</h4><p>Degrees, certifications, clearances. List them all now. You will cut later. The bio will use the two or three your audience respects most.</p></div>
+      <div class="fw-card"><span class="fw-kicker">Input 04</span><h4>Your Point of View</h4><p>One belief about your field that most peers would not say out loud. This is what makes a bio memorable instead of interchangeable.</p></div>
+      <div class="fw-card"><span class="fw-kicker">Input 05</span><h4>Proof of Authority</h4><p>Publications, speaking engagements, leadership roles, media mentions, awards. External validation the reader can verify.</p></div>
+      <div class="fw-card"><span class="fw-kicker">Input 06</span><h4>The Human Line</h4><p>One sentence of texture: where you are based, what you build outside work, what you are writing. One sentence. Not a paragraph.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 03 ============ -->
+<section class="content">
+  <div class="wrap">
+    <p class="sec-label">Section 03</p>
+    <h2>The Five-Prompt Bio System</h2>
+    <p>Run these prompts in Claude.AI in order, in a single conversation. Each prompt builds on the last. Copy them exactly, then replace the bracketed text with your own material.</p>
+
+    <div class="roadmap">
+      <div class="road-step">
+        <div class="road-dot">1</div>
+        <h4>Set the Role and Load Your Material</h4>
+        <p>This prompt turns Claude into a positioning strategist instead of a generic writer. It also forces an interview phase, which surfaces details you forgot you had.</p>
+        <div class="prompt-block"><span class="pb-tag">Prompt 1 · Setup</span>You are an executive positioning strategist who writes professional bios for senior leaders. Your job is to position me for [TARGET AUDIENCE, e.g., CEOs of mid-size tech companies evaluating consultants].
+
+Here is my raw material:
+[PASTE YOUR SIX INPUTS FROM SECTION 02]
+
+Before writing anything, ask me 5 questions that would help you position me more sharply. Focus on gaps in my material, not what I already gave you.</div>
+      </div>
+
+      <div class="road-step">
+        <div class="road-dot">2</div>
+        <h4>Answer the Questions, Then Request the First Draft</h4>
+        <p>Answer Claude's questions honestly. Short answers are fine. Then request the draft with explicit structural rules so you get a positioning document, not a chronology.</p>
+        <div class="prompt-block"><span class="pb-tag">Prompt 2 · First Draft</span>Now write my full professional bio, 250 to 300 words, third person. Rules:
+
+1. Open with the problem I solve or the value I create. Never open with my name and title.
+2. Use my actual numbers. Do not soften or generalize them.
+3. Credentials appear through specifics, not adjectives. Never call me "seasoned," "passionate," or "results-driven."
+4. Include my point of view in one sentence.
+5. End with one line of human texture.
+6. Short declarative sentences. No em dashes.</div>
+      </div>
+
+      <div class="road-step">
+        <div class="road-dot">3</div>
+        <h4>Pressure-Test the Draft</h4>
+        <p>Do not accept the first draft. Make Claude attack its own work. This is where the generic phrasing gets stripped out.</p>
+        <div class="prompt-block"><span class="pb-tag">Prompt 3 · Critique</span>Critique this bio as a skeptical [TARGET READER, e.g., Fortune 500 COO] would. Identify:
+
+1. Every phrase that could appear in anyone's bio
+2. Every claim that lacks proof
+3. The single weakest sentence
+4. What is missing that this reader would want to know
+
+Then rewrite the bio fixing all four issues.</div>
+      </div>
+
+      <div class="road-step">
+        <div class="road-dot">4</div>
+        <h4>Match It to Your Voice</h4>
+        <p>A bio that does not sound like you fails in person. Give Claude a writing sample and let it close the gap between the draft and how you actually communicate.</p>
+        <div class="prompt-block"><span class="pb-tag">Prompt 4 · Voice</span>Here is a sample of my actual writing:
+[PASTE A LINKEDIN POST, EMAIL, OR ARTICLE YOU WROTE]
+
+Compare the bio's voice against my writing. Adjust sentence length, word choice, and tone so the bio sounds like me on my best day. Keep all facts and structure intact.</div>
+      </div>
+
+      <div class="road-step">
+        <div class="road-dot">5</div>
+        <h4>Generate Every Length You Need</h4>
+        <p>One conversation, every deliverable. Claude already holds your full context, so the short versions stay consistent with the long one.</p>
+        <div class="prompt-block"><span class="pb-tag">Prompt 5 · Versions</span>Using the final bio, produce:
+
+1. SHORT BIO: 100 words, for speaker introductions and proposals
+2. ONE-LINER: 25 words or fewer, for panels and podcast intros
+3. LINKEDIN ABOUT: 150 words, first person, written to my target audience
+4. SOCIAL BIO: 160 characters, for X/Instagram profiles
+
+Each version must lead with value, not title.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 04 ============ -->
+<section class="content">
+  <div class="wrap">
+    <p class="sec-label">Section 04</p>
+    <h2>Six Mistakes That Sink Professional Bios</h2>
+    <p>Review your final output against this list. If Claude produced any of these, send it back with the specific fix.</p>
+    <div class="mistakes-grid">
+      <div class="mistake"><h4>Opening with your name and title</h4><p>The reader can see your name. Open with the problem you solve. Your name belongs in sentence two or three.</p></div>
+      <div class="mistake"><h4>Adjective-based credibility</h4><p>"Dynamic," "seasoned," and "passionate" are claims without evidence. A $38M program recovery is evidence. State the number and delete the adjective.</p></div>
+      <div class="mistake"><h4>Listing every employer</h4><p>Your bio is not a resume. Name two or three organizations your audience recognizes. The rest is noise.</p></div>
+      <div class="mistake"><h4>Writing one bio for every context</h4><p>A speaker bio sells the talk. A client bio sells the engagement. A board bio sells judgment. Different readers, different documents.</p></div>
+      <div class="mistake"><h4>Accepting Claude's first draft</h4><p>The first draft is raw material. The system works because of Prompts 3 and 4. Skipping the critique step produces a polished version of generic.</p></div>
+      <div class="mistake"><h4>Letting it go stale</h4><p>A bio with no results from the last 18 months reads as a career in past tense. Re-run Prompt 5 twice a year with new wins loaded.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 05 ============ -->
+<section class="content">
+  <div class="wrap">
+    <p class="sec-label">Section 05</p>
+    <h2>The Final Quality Check</h2>
+    <p>Before your bio goes anywhere public, it must pass every line of this checklist. No exceptions.</p>
+    <div class="checklist">
+      <div class="check-item"><div class="check-box"></div><p><b>The first sentence states value,</b> not identity. A stranger reading only that sentence knows what you do for people like them.</p></div>
+      <div class="check-item"><div class="check-box"></div><p><b>At least two claims carry numbers.</b> Dollars, percentages, team sizes, timelines. Verifiable specifics.</p></div>
+      <div class="check-item"><div class="check-box"></div><p><b>Zero filler adjectives.</b> Search for "passionate," "dynamic," "seasoned," and "results-driven." Delete every instance.</p></div>
+      <div class="check-item"><div class="check-box"></div><p><b>It sounds like you out loud.</b> Read it to someone who knows you. If they smirk, revise.</p></div>
+      <div class="check-item"><div class="check-box"></div><p><b>Every fact is accurate.</b> Claude drafts from what you provide. You are the verification step. Check every number, title, and organization name before publishing.</p></div>
+      <div class="check-item"><div class="check-box"></div><p><b>All four lengths exist and agree.</b> Full, short, one-liner, and social versions tell the same story at different depths.</p></div>
+    </div>
+    <div class="callout">
+      <p>The bio is the smallest document in your professional portfolio and the one read most often. Treat it like infrastructure, not an afterthought.</p>
+      <p class="attr">Dr. Minina Johnson, DBA, PMP</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER CTA ============ -->
+<footer class="footer-cta">
+  <h2>Your Bio Is Step One. Your Operations Are the Rest.</h2>
+  <p>Greater Ambitions LLC helps founders and executives at scaling companies close the gap between strategy and execution. If your positioning is sharp but your delivery systems are not, the BuiltToScale™ Execution Gap Diagnostic is where we start.</p>
+  <p class="cta-tagline">Diagnose. Build. Execute. Scale.</p>
+  <div class="footer-logo-zone">
+    <a href='https://postimg.cc/bSYhPL8Q' target='_blank'><img src='https://i.postimg.cc/bSYhPL8Q/rev-Screenshot-2026-04-27-at-10-23-19-AM.png' border='0' alt='rev-Screenshot-2026-04-27-at-10-23-19-AM'></a>
+  </div>
+  <p class="footer-meta">Greater Ambitions LLC · Tucson, Arizona<br>© 2026 Dr. Minina Johnson, DBA, PMP · All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
