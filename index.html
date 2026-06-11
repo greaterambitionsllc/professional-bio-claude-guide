@@ -239,6 +239,52 @@
     html { scroll-behavior: auto; }
     * { transition: none !important; }
   }
+  /* ── CONTACT ── */
+  .contact-section { background: var(--burgundy); padding: 6rem 0; text-align: center; }
+  .contact-section .section-label { justify-content: center; color: var(--gold-pale); }
+  .contact-section .section-label::after { background: var(--gold-pale); }
+  .contact-section .section-heading {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 1rem;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+  }
+  .contact-sub {
+    font-size: 0.9rem;
+    color: rgba(247,243,236,0.7);
+    max-width: 480px;
+    margin: 0 auto 3rem;
+    line-height: 1.8;
+  }
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--cream);
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid rgba(247,243,236,0.3);
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .contact-link:hover { background: rgba(247,243,236,0.1); border-color: var(--cream); }
+  .contact-tagline {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 2rem;
+  }
 </style>
 </head>
 <body>
@@ -418,13 +464,20 @@ Each version must lead with value, not title.</div>
 
 <!-- ============ FOOTER CTA ============ -->
 <footer class="footer-cta">
-  <h2>Your Bio Is Step One.<br>Your Operations Are the Rest.</h2>
-  <p>Greater Ambitions LLC helps founders and executives at scaling companies close the gap between strategy and execution. If your positioning is sharp but your delivery systems are not, the BuiltToScale™ Execution Gap Diagnostic is where we start.</p>
-  <p class="cta-tagline">Diagnose. Build. Execute. Scale.</p>
+  <h2>Your Bio Is Step One.<br>Your <em>Operations</em> Are the Rest.</h2>
+  <p>Greater Ambitions LLC helps founders and executives at scaling companies close the gap between strategy and execution. Ready to Evolve Your PMO & Operational Infrastructure?</p>
+  <div class="contact-links reveal">
+      <a href="mailto:info@greaterambitionsllc.com" class="contact-link">✉ info@greaterambitionsllc.com</a>
+      <a href="https://www.greaterambitionsllc.com" target="_blank" class="contact-link">↗ greaterambitionsllc.com</a>
+      <a href="https://linkedin.com/in/dr-minina-johnson" target="_blank" class="contact-link">in LinkedIn</a>
+      <a href="tel:+15203460922" class="contact-link">☎ +1 (520) 346-0922</a>
+    </div>
   <div class>
-    <a href='https://postimg.cc/bSYhPL8Q' target='_blank'><img src='https://i.postimg.cc/bSYhPL8Q/rev-Screenshot-2026-04-27-at-10-23-19-AM.png' border='0' alt='rev-Screenshot-2026-04-27-at-10-23-19-AM'></a>
+      <a href='https://postimg.cc/bSYhPL8Q' target='_blank'><img src='https://i.postimg.cc/bSYhPL8Q/rev-Screenshot-2026-04-27-at-10-23-19-AM.png' border='0' alt='rev-Screenshot-2026-04-27-at-10-23-19-AM'></a>
+    </div>
+    <p class="cta-tagline">Diagnose. Build. Execute. Scale.</p>
   </div>
-  <p class="footer-meta">Greater Ambitions LLC · Tucson, Arizona<br>© 2026 Dr. Minina Johnson, DBA, PMP · All Rights Reserved</p>
+  <p class="footer-meta">Greater Ambitions LLC · Tucson, Arizona<br>© 2026 Dr. Minina Johnson, DBA, PMP<br>All Rights Reserved</p>
 </footer>
 
 </body>
